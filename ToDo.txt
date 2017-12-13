@@ -1,0 +1,5 @@
+1) Create game-controller and display-logic stubs
+2) Create wrapper incorporating all high-level modules
+3) Design and implement display logic
+4) Add ROMs to display logic
+5) Design and implement game controller

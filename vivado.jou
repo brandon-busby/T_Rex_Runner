@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2017.3.1 (64-bit)
+# SW Build 2035080 on Fri Oct 20 14:20:00 MDT 2017
+# IP Build 2034413 on Fri Oct 20 15:56:25 MDT 2017
+# Start of session at: Sun Nov 19 16:18:31 2017
+# Process ID: 1999
+# Current directory: /home/brandon/Documents/Vivado_Projects/T_Rex_Runner
+# Command line: vivado
+# Log file: /home/brandon/Documents/Vivado_Projects/T_Rex_Runner/vivado.log
+# Journal file: /home/brandon/Documents/Vivado_Projects/T_Rex_Runner/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/brandon/Documents/Vivado_Projects/T_Rex_Runner/T_Rex_Runner.xpr
+update_compile_order -fileset sources_1
