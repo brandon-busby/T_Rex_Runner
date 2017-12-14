@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.3.1 (64-bit)
+# SW Build 2035080 on Fri Oct 20 14:20:00 MDT 2017
+# IP Build 2034413 on Fri Oct 20 15:56:25 MDT 2017
+# Start of session at: Wed Dec 13 18:05:25 2017
+# Process ID: 19983
+# Current directory: /home/brandon/Documents/Vivado_Projects/T_Rex_Runner/T_Rex_Runner.runs/dROM_synth_1
+# Command line: vivado -log dROM.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source dROM.tcl
+# Log file: /home/brandon/Documents/Vivado_Projects/T_Rex_Runner/T_Rex_Runner.runs/dROM_synth_1/dROM.vds
+# Journal file: /home/brandon/Documents/Vivado_Projects/T_Rex_Runner/T_Rex_Runner.runs/dROM_synth_1/vivado.jou
+#-----------------------------------------------------------
+source dROM.tcl -notrace

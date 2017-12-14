@@ -1,0 +1,247 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.3.1 (lin64) Build 2035080 Fri Oct 20 14:20:00 MDT 2017
+| Date         : Wed Dec 13 21:54:11 2017
+| Host         : brandon-P2540UA running 64-bit Linux Mint 18.2 Sonya
+| Command      : report_methodology -file Wrapper_methodology_drc_routed.rpt -pb Wrapper_methodology_drc_routed.pb -rpx Wrapper_methodology_drc_routed.rpx
+| Design       : Wrapper
+| Device       : xc7a100tcsg324-1
+| Speed File   : -1
+| Design State : Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 42
++-----------+----------+-------------------------------+------------+
+| Rule      | Severity | Description                   | Violations |
++-----------+----------+-------------------------------+------------+
+| TIMING-17 | Warning  | Non-clocked sequential cell   | 20         |
+| TIMING-18 | Warning  | Missing input or output delay | 15         |
+| TIMING-20 | Warning  | Non-clocked latch             | 7          |
++-----------+----------+-------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-17#1 Warning
+Non-clocked sequential cell  
+The clock pin VGAController/pixel_x_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#2 Warning
+Non-clocked sequential cell  
+The clock pin VGAController/pixel_x_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#3 Warning
+Non-clocked sequential cell  
+The clock pin VGAController/pixel_x_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#4 Warning
+Non-clocked sequential cell  
+The clock pin VGAController/pixel_x_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#5 Warning
+Non-clocked sequential cell  
+The clock pin VGAController/pixel_x_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#6 Warning
+Non-clocked sequential cell  
+The clock pin VGAController/pixel_x_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#7 Warning
+Non-clocked sequential cell  
+The clock pin VGAController/pixel_x_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#8 Warning
+Non-clocked sequential cell  
+The clock pin VGAController/pixel_x_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#9 Warning
+Non-clocked sequential cell  
+The clock pin VGAController/pixel_x_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#10 Warning
+Non-clocked sequential cell  
+The clock pin VGAController/pixel_x_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#11 Warning
+Non-clocked sequential cell  
+The clock pin VGAController/pixel_y_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#12 Warning
+Non-clocked sequential cell  
+The clock pin VGAController/pixel_y_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#13 Warning
+Non-clocked sequential cell  
+The clock pin VGAController/pixel_y_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#14 Warning
+Non-clocked sequential cell  
+The clock pin VGAController/pixel_y_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#15 Warning
+Non-clocked sequential cell  
+The clock pin VGAController/pixel_y_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#16 Warning
+Non-clocked sequential cell  
+The clock pin VGAController/pixel_y_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#17 Warning
+Non-clocked sequential cell  
+The clock pin VGAController/pixel_y_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#18 Warning
+Non-clocked sequential cell  
+The clock pin VGAController/pixel_y_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#19 Warning
+Non-clocked sequential cell  
+The clock pin VGAController/pixel_y_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#20 Warning
+Non-clocked sequential cell  
+The clock pin VGAController/pixel_y_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on Dwn relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An input delay is missing on Jmp relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An input delay is missing on Rst relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An output delay is missing on VGA_B[0] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#5 Warning
+Missing input or output delay  
+An output delay is missing on VGA_B[1] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#6 Warning
+Missing input or output delay  
+An output delay is missing on VGA_B[2] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#7 Warning
+Missing input or output delay  
+An output delay is missing on VGA_B[3] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#8 Warning
+Missing input or output delay  
+An output delay is missing on VGA_G[0] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#9 Warning
+Missing input or output delay  
+An output delay is missing on VGA_G[1] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#10 Warning
+Missing input or output delay  
+An output delay is missing on VGA_G[2] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#11 Warning
+Missing input or output delay  
+An output delay is missing on VGA_G[3] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#12 Warning
+Missing input or output delay  
+An output delay is missing on VGA_R[0] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#13 Warning
+Missing input or output delay  
+An output delay is missing on VGA_R[1] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#14 Warning
+Missing input or output delay  
+An output delay is missing on VGA_R[2] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#15 Warning
+Missing input or output delay  
+An output delay is missing on VGA_R[3] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-20#1 Warning
+Non-clocked latch  
+The latch PrimaryController/Duck_reg cannot be properly analyzed as its control pin PrimaryController/Duck_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#2 Warning
+Non-clocked latch  
+The latch PrimaryController/Gnd_Next_reg cannot be properly analyzed as its control pin PrimaryController/Gnd_Next_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#3 Warning
+Non-clocked latch  
+The latch PrimaryController/Rising_Next_reg cannot be properly analyzed as its control pin PrimaryController/Rising_Next_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#4 Warning
+Non-clocked latch  
+The latch PrimaryController/Rst_reg cannot be properly analyzed as its control pin PrimaryController/Rst_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#5 Warning
+Non-clocked latch  
+The latch Sanitize_Inputs/Btn_Out_reg[0] cannot be properly analyzed as its control pin Sanitize_Inputs/Btn_Out_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#6 Warning
+Non-clocked latch  
+The latch Sanitize_Inputs/Btn_Out_reg[1] cannot be properly analyzed as its control pin Sanitize_Inputs/Btn_Out_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#7 Warning
+Non-clocked latch  
+The latch Sanitize_Inputs/Btn_Out_reg[2] cannot be properly analyzed as its control pin Sanitize_Inputs/Btn_Out_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+

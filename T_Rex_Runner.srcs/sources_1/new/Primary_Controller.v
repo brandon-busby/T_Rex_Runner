@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Primary_Controller(output reg GameOver, Duck, output reg [9:0] Player_Y, Map_Shift, input Clk, Ref_Tick, Jmp, Dwn, Collision, Bound_Lower, Bount_Upper);
+module Primary_Controller(output InFall, reg GameOver, Duck, output reg [9:0] Player_Y, Map_Shift, input Clk, Controller_Rst, Ref_Tick, Jmp, Dwn, Collision);
     // State definitions
     parameter STARTUP = 0;
     parameter WAIT = 1;
@@ -31,21 +31,22 @@ module Primary_Controller(output reg GameOver, Duck, output reg [9:0] Player_Y, 
     parameter AIR = 6;
     parameter RISE = 7;
     parameter FALL = 8;
+    parameter WAIT_BTN_UP = 9;
     
-    // Datapath Constants
-    parameter VELOCITY_CONSTANT = 5; // Dummy value
-    parameter BOUNDARY_BUFFER = 5; // Dummy value
-    parameter UPPER_BOUNDARY = 200; // Dummy value
-    parameter LOWER_BOUNDARY = 0; // Dummy value
+    parameter UPPER_BOUNDARY = 180;
+    parameter LOWER_BOUNDARY = 380;
+    
+    parameter DELTA_Y = 5;
+    
+    assign InFall = (State == FALL);
     
     // State registers
     reg [4:0] State, State_Next;
     
     // Local Datapath Storage
-    wire [9:0] Delta_Y;
     
     // Controller to Datapath Signals
-    reg Rst, Rising, Gnd;
+    reg Rst, Rising, Gnd, Rising_Next, Gnd_Next;
     
     // Datapath to Controller Signals
     wire LowerBoundReached, UpperBoundReached;
@@ -55,32 +56,32 @@ module Primary_Controller(output reg GameOver, Duck, output reg [9:0] Player_Y, 
         case (State)
         STARTUP: begin
             Rst <= 1;
-            Rising <= 0;
-            Gnd <= 1;
+            Rising_Next <= 0;
+            Gnd_Next <= 1;
             GameOver <= 0;
             Duck <= 0;
             State_Next <= WAIT;
         end
         WAIT: begin
             Rst <= 1;
-            Rising <= 0;
-            Gnd <= 1;
+            Rising_Next <= 0;
+            Gnd_Next <= 1;
             GameOver <= GameOver;
             Duck <= 0;
-            State_Next <= (Jmp | Dwn) ? TICK : WAIT;
+            State_Next <= (Jmp | Dwn) ? WAIT_BTN_UP : WAIT;
         end
         GAME_OVER: begin
             Rst <= 0;
-            Rising <= Rising;
-            Gnd <= Gnd;
+            Rising_Next <= Rising;
+            Gnd_Next <= Gnd;
             GameOver <= 1;
             Duck <= Duck;
             State_Next <= WAIT;
         end
         TICK: begin
             Rst <= 0;
-            Rising <= Rising;
-            Gnd <= Gnd;
+            Rising_Next <= UpperBoundReached ? 0 : Rising;
+            Gnd_Next <= Gnd;
             GameOver <= 0;
             Duck <= Dwn & Gnd & ~Jmp;
             if (~Ref_Tick)
@@ -96,43 +97,51 @@ module Primary_Controller(output reg GameOver, Duck, output reg [9:0] Player_Y, 
         end
         SCROLL_MAP: begin
             Rst <= 0;
-            Rising <= Rising;
-            Gnd <= Gnd;
+            Rising_Next <= Rising;
+            Gnd_Next <= Gnd;
             GameOver <= 0;
             Duck <= Duck;
             State_Next <= TICK;
         end
         INIT_JMP: begin
             Rst <= 0;
-            Rising <= 1;
-            Gnd <= 0;
+            Rising_Next <= 1;
+            Gnd_Next <= 0;
             GameOver <= 0;
             Duck <= 0;
             State_Next <= AIR;
         end
         AIR: begin
             Rst <= 0;
-            Rising <= Rising;
-            Gnd <= 0;
+            Rising_Next <= Rising;
+            Gnd_Next <= 0;
             GameOver <= 0;
             Duck <= 0;
             State_Next <= Rising ? RISE : FALL;
         end
         RISE: begin
             Rst <= 0;
-            Rising <= ~UpperBoundReached;
-            Gnd <= 0;
+            Rising_Next <= ~UpperBoundReached;
+            Gnd_Next <= 0;
             GameOver <= 0;
             Duck <= 0;
             State_Next <= SCROLL_MAP;
         end
         FALL: begin
             Rst <= 0;
-            Rising <= 0;
-            Gnd <= LowerBoundReached;
+            Rising_Next <= 0;
+            Gnd_Next <= LowerBoundReached;
             GameOver <= 0;
             Duck <= 0;
             State_Next <= SCROLL_MAP;
+        end
+        WAIT_BTN_UP: begin
+            Rst <= 1;
+            Rising_Next <= 0;
+            Gnd_Next <= 1;
+            GameOver <= GameOver;
+            Duck <= 0;
+            State_Next <= (Jmp | Dwn) ? WAIT_BTN_UP : TICK;
         end
         default: begin
             State_Next <= STARTUP;
@@ -142,21 +151,39 @@ module Primary_Controller(output reg GameOver, Duck, output reg [9:0] Player_Y, 
     
     // State flip-flop Logic
     always @ (posedge Clk) begin
-        State <= State_Next;
+        Rising <= Rising_Next;
+        Gnd <= Gnd_Next;
+        if (Controller_Rst)
+            State <= STARTUP;
+        else
+            State <= State_Next;
     end
     
     // Datapath
-    assign LowerBoundReached = (Player_Y < LOWER_BOUNDARY);
-    assign UpperBoundReached = (Player_Y > UPPER_BOUNDARY);
-    assign Delta_Y = VELOCITY_CONSTANT*(UPPER_BOUNDARY + BOUNDARY_BUFFER - Player_Y);
+    assign LowerBoundReached = (Player_Y > LOWER_BOUNDARY);
+    assign UpperBoundReached = (Player_Y < UPPER_BOUNDARY);
+    // assign Delta_Y = 6; //(Player_Y - UPPER_BOUNDARY - BOUNDARY_BUFFER) >> VELOCITY_CONSTANT;
     
-    always @ (posedge Clk) begin
-        if (Rst)
-            Player_Y <= 0;
-        else if (Rising)
-            Player_Y <= Player_Y + Delta_Y;
-        else
-            Player_Y <= Player_Y - Delta_Y;
+    always @ (negedge Clk) begin
+        if (Rst) begin
+            Player_Y <= LOWER_BOUNDARY;
+        end
+        else begin
+            case (State)
+            RISE: begin
+                Player_Y <= Player_Y - DELTA_Y;
+            end
+            FALL: begin
+                if (LowerBoundReached)
+                    Player_Y <= LOWER_BOUNDARY;
+                else
+                    Player_Y <= Player_Y + DELTA_Y;
+            end
+            default: begin
+                Player_Y <= Player_Y;
+            end
+            endcase
+        end
     end
     
 endmodule
