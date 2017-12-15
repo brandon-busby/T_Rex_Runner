@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.3.1 (64-bit)
+# SW Build 2035080 on Fri Oct 20 14:20:00 MDT 2017
+# IP Build 2034413 on Fri Oct 20 15:56:25 MDT 2017
+# Start of session at: Thu Dec 14 17:45:01 2017
+# Process ID: 8243
+# Current directory: /home/brandon/Documents/Vivado_Projects/T_Rex_Runner/T_Rex_Runner.runs/obstacleROM_synth_1
+# Command line: vivado -log obstacleROM.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source obstacleROM.tcl
+# Log file: /home/brandon/Documents/Vivado_Projects/T_Rex_Runner/T_Rex_Runner.runs/obstacleROM_synth_1/obstacleROM.vds
+# Journal file: /home/brandon/Documents/Vivado_Projects/T_Rex_Runner/T_Rex_Runner.runs/obstacleROM_synth_1/vivado.jou
+#-----------------------------------------------------------
+source obstacleROM.tcl -notrace

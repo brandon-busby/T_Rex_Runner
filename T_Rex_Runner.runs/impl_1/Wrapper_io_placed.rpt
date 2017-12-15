@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2017.3.1 (lin64) Build 2035080 Fri Oct 20 14:20:00 MDT 2017
-| Date                      : Wed Dec 13 21:53:49 2017
+| Date                      : Thu Dec 14 20:00:20 2017
 | Host                      : brandon-P2540UA running 64-bit Linux Mint 18.2 Sonya
 | Command                   : report_io -file Wrapper_io_placed.rpt
 | Design                    : Wrapper

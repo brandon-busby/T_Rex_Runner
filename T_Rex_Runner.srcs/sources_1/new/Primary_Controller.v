@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Primary_Controller(output InFall, reg GameOver, Duck, output reg [9:0] Player_Y, Map_Shift, input Clk, Controller_Rst, Ref_Tick, Jmp, Dwn, Collision);
+module Primary_Controller(output reg Gnd, GameOver, Duck, Collision, output reg [9:0] Player_Y, Map_Shift, input Clk, Controller_Rst, Ref_Tick, Jmp, Dwn);
     // State definitions
     parameter STARTUP = 0;
     parameter WAIT = 1;
@@ -38,7 +38,7 @@ module Primary_Controller(output InFall, reg GameOver, Duck, output reg [9:0] Pl
     
     parameter DELTA_Y = 5;
     
-    assign InFall = (State == FALL);
+    always @ (*) Collision <= 0;
     
     // State registers
     reg [4:0] State, State_Next;
@@ -46,7 +46,7 @@ module Primary_Controller(output InFall, reg GameOver, Duck, output reg [9:0] Pl
     // Local Datapath Storage
     
     // Controller to Datapath Signals
-    reg Rst, Rising, Gnd, Rising_Next, Gnd_Next;
+    reg Rst, Rising, Rising_Next, Gnd_Next;
     
     // Datapath to Controller Signals
     wire LowerBoundReached, UpperBoundReached;
@@ -57,7 +57,7 @@ module Primary_Controller(output InFall, reg GameOver, Duck, output reg [9:0] Pl
         STARTUP: begin
             Rst <= 1;
             Rising_Next <= 0;
-            Gnd_Next <= 1;
+            Gnd_Next <= 0;
             GameOver <= 0;
             Duck <= 0;
             State_Next <= WAIT;
@@ -65,7 +65,7 @@ module Primary_Controller(output InFall, reg GameOver, Duck, output reg [9:0] Pl
         WAIT: begin
             Rst <= 1;
             Rising_Next <= 0;
-            Gnd_Next <= 1;
+            Gnd_Next <= 0;
             GameOver <= GameOver;
             Duck <= 0;
             State_Next <= (Jmp | Dwn) ? WAIT_BTN_UP : WAIT;
@@ -83,7 +83,7 @@ module Primary_Controller(output InFall, reg GameOver, Duck, output reg [9:0] Pl
             Rising_Next <= UpperBoundReached ? 0 : Rising;
             Gnd_Next <= Gnd;
             GameOver <= 0;
-            Duck <= Dwn & Gnd & ~Jmp;
+            Duck <= Dwn & Gnd;
             if (~Ref_Tick)
                 State_Next <= TICK;
             else if (Collision)

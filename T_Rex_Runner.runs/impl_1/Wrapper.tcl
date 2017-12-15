@@ -75,7 +75,7 @@ set rc [catch {
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES XPM_MEMORY [current_project]
   add_files -quiet /home/brandon/Documents/Vivado_Projects/T_Rex_Runner/T_Rex_Runner.runs/synth_1/Wrapper.dcp
-  read_ip -quiet /home/brandon/Documents/Vivado_Projects/T_Rex_Runner/T_Rex_Runner.srcs/sources_1/ip/dROM/dROM.xci
+  read_ip -quiet /home/brandon/Documents/Vivado_Projects/T_Rex_Runner/T_Rex_Runner.srcs/sources_1/ip/dinoROM/dinoROM.xci
   read_xdc /home/brandon/Documents/Vivado_Projects/T_Rex_Runner/T_Rex_Runner.srcs/constrs_1/new/Nexys4DDR_Master.xdc
   link_design -top Wrapper -part xc7a100tcsg324-1
   close_msg_db -file init_design.pb

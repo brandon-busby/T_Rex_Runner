@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.3.1 (lin64) Build 2035080 Fri Oct 20 14:20:00 MDT 2017
-| Date             : Wed Dec 13 21:54:12 2017
+| Date             : Thu Dec 14 20:00:42 2017
 | Host             : brandon-P2540UA running 64-bit Linux Mint 18.2 Sonya
 | Command          : report_power -file Wrapper_power_routed.rpt -pb Wrapper_power_summary_routed.pb -rpx Wrapper_power_routed.rpx
 | Design           : Wrapper
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.106        |
+| Total On-Chip Power (W)  | 0.110        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.009        |
+| Dynamic (W)              | 0.013        |
 | Device Static (W)        | 0.097        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 84.5         |
@@ -52,18 +52,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      242 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      113 |     63400 |            0.18 |
-|   Register     |    <0.001 |       77 |    126800 |            0.06 |
-|   CARRY4       |    <0.001 |       10 |     15850 |            0.06 |
-|   Others       |     0.000 |       13 |       --- |             --- |
+| Clocks         |    <0.001 |        3 |       --- |             --- |
+| Slice Logic    |    <0.001 |      260 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      117 |     63400 |            0.18 |
+|   Register     |    <0.001 |       83 |    126800 |            0.07 |
+|   CARRY4       |    <0.001 |       12 |     15850 |            0.08 |
+|   Others       |     0.000 |       15 |       --- |             --- |
 |   F7/F8 Muxes  |     0.000 |        2 |     63400 |           <0.01 |
 | Signals        |    <0.001 |      190 |       --- |             --- |
 | Block RAM      |    <0.001 |      0.5 |       135 |            0.37 |
-| I/O            |     0.007 |       18 |       210 |            8.57 |
+| I/O            |     0.011 |       18 |       210 |            8.57 |
 | Static Power   |     0.097 |          |           |                 |
-| Total          |     0.106 |          |           |                 |
+| Total          |     0.110 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,8 +74,8 @@ Table of Contents
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
 | Vccint    |       1.000 |     0.017 |       0.002 |      0.015 |
-| Vccaux    |       1.800 |     0.018 |       0.000 |      0.018 |
-| Vcco33    |       3.300 |     0.006 |       0.002 |      0.004 |
+| Vccaux    |       1.800 |     0.019 |       0.000 |      0.018 |
+| Vcco33    |       3.300 |     0.007 |       0.003 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -142,9 +142,10 @@ Table of Contents
 +------------------------------------------------+-----------+
 | Name                                           | Power (W) |
 +------------------------------------------------+-----------+
-| Wrapper                                        |     0.009 |
+| Wrapper                                        |     0.013 |
 |   PixelGeneration                              |    <0.001 |
-|     digitROM                                   |    <0.001 |
+|     DDC                                        |    <0.001 |
+|     dinoROMa                                   |    <0.001 |
 |       U0                                       |    <0.001 |
 |         inst_blk_mem_gen                       |    <0.001 |
 |           gnbram.gnativebmg.native_blk_mem_gen |    <0.001 |

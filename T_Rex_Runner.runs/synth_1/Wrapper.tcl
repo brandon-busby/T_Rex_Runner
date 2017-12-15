@@ -31,15 +31,19 @@ set_property target_language Verilog [current_project]
 set_property ip_output_repo /home/brandon/Documents/Vivado_Projects/T_Rex_Runner/T_Rex_Runner.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 add_files /home/brandon/Documents/Vivado_Projects/T_Rex_Runner/digitsROM.coe
+add_files /home/brandon/Documents/Vivado_Projects/T_Rex_Runner/dinoROM.coe
+add_files /home/brandon/Documents/Vivado_Projects/T_Rex_Runner/obstaclesROM.coe
 read_verilog -library xil_defaultlib {
+  /home/brandon/Documents/Vivado_Projects/T_Rex_Runner/T_Rex_Runner.srcs/sources_1/new/Counter.v
   /home/brandon/Documents/Vivado_Projects/T_Rex_Runner/T_Rex_Runner.srcs/sources_1/new/Debouncer.v
+  /home/brandon/Documents/Vivado_Projects/T_Rex_Runner/T_Rex_Runner.srcs/sources_1/new/Dino_Display_Controller.v
   /home/brandon/Documents/Vivado_Projects/T_Rex_Runner/T_Rex_Runner.srcs/sources_1/new/Pixel_Generation.v
   /home/brandon/Documents/Vivado_Projects/T_Rex_Runner/T_Rex_Runner.srcs/sources_1/new/Primary_Controller.v
   /home/brandon/Documents/Vivado_Projects/T_Rex_Runner/T_Rex_Runner.srcs/sources_1/new/VGA_Controller.v
   /home/brandon/Documents/Vivado_Projects/T_Rex_Runner/T_Rex_Runner.srcs/sources_1/new/Wrapper.v
 }
-read_ip -quiet /home/brandon/Documents/Vivado_Projects/T_Rex_Runner/T_Rex_Runner.srcs/sources_1/ip/dROM/dROM.xci
-set_property used_in_implementation false [get_files -all /home/brandon/Documents/Vivado_Projects/T_Rex_Runner/T_Rex_Runner.srcs/sources_1/ip/dROM/dROM_ooc.xdc]
+read_ip -quiet /home/brandon/Documents/Vivado_Projects/T_Rex_Runner/T_Rex_Runner.srcs/sources_1/ip/dinoROM/dinoROM.xci
+set_property used_in_implementation false [get_files -all /home/brandon/Documents/Vivado_Projects/T_Rex_Runner/T_Rex_Runner.srcs/sources_1/ip/dinoROM/dinoROM_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

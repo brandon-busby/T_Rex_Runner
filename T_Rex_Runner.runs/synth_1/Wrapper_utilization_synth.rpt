@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.3.1 (lin64) Build 2035080 Fri Oct 20 14:20:00 MDT 2017
-| Date         : Wed Dec 13 21:52:59 2017
+| Date         : Thu Dec 14 19:59:22 2017
 | Host         : brandon-P2540UA running 64-bit Linux Mint 18.2 Sonya
 | Command      : report_utilization -file Wrapper_utilization_synth.rpt -pb Wrapper_utilization_synth.pb
 | Design       : Wrapper
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |  112 |     0 |     63400 |  0.18 |
-|   LUT as Logic          |  112 |     0 |     63400 |  0.18 |
+| Slice LUTs*             |  118 |     0 |     63400 |  0.19 |
+|   LUT as Logic          |  118 |     0 |     63400 |  0.19 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
-| Slice Registers         |   77 |     0 |    126800 |  0.06 |
-|   Register as Flip Flop |   70 |     0 |    126800 |  0.06 |
+| Slice Registers         |   83 |     0 |    126800 |  0.07 |
+|   Register as Flip Flop |   76 |     0 |    126800 |  0.06 |
 |   Register as Latch     |    7 |     0 |    126800 | <0.01 |
 | F7 Muxes                |    2 |     0 |     31700 | <0.01 |
 | F8 Muxes                |    0 |     0 |     15850 |  0.00 |
@@ -57,7 +57,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 29    |          Yes |           - |        Reset |
 | 6     |          Yes |         Set |            - |
-| 42    |          Yes |       Reset |            - |
+| 48    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -146,20 +146,20 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT6     |   54 |                 LUT |
-| FDRE     |   42 |        Flop & Latch |
-| LUT4     |   30 |                 LUT |
+| LUT6     |   53 |                 LUT |
+| FDRE     |   48 |        Flop & Latch |
+| LUT4     |   28 |                 LUT |
+| LUT5     |   26 |                 LUT |
+| LUT2     |   24 |                 LUT |
 | FDCE     |   22 |        Flop & Latch |
-| LUT5     |   21 |                 LUT |
-| LUT2     |   21 |                 LUT |
+| LUT3     |   15 |                 LUT |
 | OBUF     |   14 |                  IO |
-| LUT3     |   13 |                 LUT |
-| CARRY4   |   10 |          CarryLogic |
+| CARRY4   |   12 |          CarryLogic |
 | LDCE     |    7 |        Flop & Latch |
 | FDSE     |    6 |        Flop & Latch |
 | IBUF     |    4 |                  IO |
 | MUXF7    |    2 |               MuxFx |
-| LUT1     |    1 |                 LUT |
+| LUT1     |    2 |                 LUT |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 
@@ -170,7 +170,7 @@ Table of Contents
 +----------+------+
 | Ref Name | Used |
 +----------+------+
-| dROM     |    1 |
+| dinoROM  |    1 |
 +----------+------+
 
 

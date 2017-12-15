@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="dinoROM_synth_1" LaunchDir="/home/brandon/Documents/Vivado_Projects/T_Rex_Runner/T_Rex_Runner.runs/dinoROM_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+</Runs>
+

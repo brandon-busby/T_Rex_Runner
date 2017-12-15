@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Wed Dec 13 21:55:20 2017">
+<application name="pa" timeStamp="Thu Dec 14 20:01:42 2017">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="66327d0262734a9a93d9f244e5de7cdb" type="ProjectID"/>
-<property name="ProjectIteration" value="50" type="ProjectIteration"/>
+<property name="ProjectIteration" value="65" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
 <item name="Project Data">
@@ -17,95 +17,98 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
 </item>
 <item name="Java Command Handlers">
-<property name="AddSources" value="11" type="JavaHandler"/>
-<property name="AutoConnectTarget" value="11" type="JavaHandler"/>
-<property name="CoreView" value="1" type="JavaHandler"/>
-<property name="CustomizeCore" value="1" type="JavaHandler"/>
+<property name="AddSources" value="12" type="JavaHandler"/>
+<property name="AutoConnectTarget" value="15" type="JavaHandler"/>
+<property name="CoreView" value="5" type="JavaHandler"/>
+<property name="CustomizeCore" value="7" type="JavaHandler"/>
 <property name="EditProperties" value="2" type="JavaHandler"/>
-<property name="LaunchProgramFpga" value="32" type="JavaHandler"/>
+<property name="LaunchProgramFpga" value="45" type="JavaHandler"/>
 <property name="NewProject" value="1" type="JavaHandler"/>
-<property name="OpenHardwareManager" value="12" type="JavaHandler"/>
-<property name="OpenProject" value="2" type="JavaHandler"/>
-<property name="RecustomizeCore" value="1" type="JavaHandler"/>
+<property name="OpenHardwareManager" value="18" type="JavaHandler"/>
+<property name="OpenProject" value="3" type="JavaHandler"/>
+<property name="RecustomizeCore" value="2" type="JavaHandler"/>
 <property name="ResetLayout" value="1" type="JavaHandler"/>
-<property name="RunBitgen" value="36" type="JavaHandler"/>
+<property name="RunBitgen" value="53" type="JavaHandler"/>
 <property name="RunImplementation" value="18" type="JavaHandler"/>
 <property name="RunSynthesis" value="14" type="JavaHandler"/>
+<property name="SaveFileProxyHandler" value="2" type="JavaHandler"/>
 <property name="SetTopNode" value="1" type="JavaHandler"/>
-<property name="ShowView" value="2" type="JavaHandler"/>
-<property name="ViewTaskProjectManager" value="1" type="JavaHandler"/>
+<property name="ShowView" value="3" type="JavaHandler"/>
+<property name="ViewTaskProjectManager" value="3" type="JavaHandler"/>
 <property name="ui.views.c.h.e" value="1" type="JavaHandler"/>
 </item>
 <item name="Gui Handlers">
 <property name="AbstractFileView_CLOSE" value="4" type="GuiHandlerData"/>
 <property name="AddSrcWizard_SPECIFY_HDL_NETLIST_BLOCK_DESIGN" value="1" type="GuiHandlerData"/>
-<property name="BaseDialog_CANCEL" value="28" type="GuiHandlerData"/>
+<property name="BaseDialog_CANCEL" value="41" type="GuiHandlerData"/>
 <property name="BaseDialog_NO" value="1" type="GuiHandlerData"/>
-<property name="BaseDialog_OK" value="133" type="GuiHandlerData"/>
-<property name="BaseDialog_YES" value="21" type="GuiHandlerData"/>
+<property name="BaseDialog_OK" value="165" type="GuiHandlerData"/>
+<property name="BaseDialog_YES" value="36" type="GuiHandlerData"/>
 <property name="CmdMsgDialog_OK" value="8" type="GuiHandlerData"/>
 <property name="ConstraintsChooserPanel_ADD_FILES" value="1" type="GuiHandlerData"/>
-<property name="CoreTreeTablePanel_CORE_TREE_TABLE" value="4" type="GuiHandlerData"/>
-<property name="CreateSrcFileDialog_FILE_NAME" value="8" type="GuiHandlerData"/>
+<property name="CoreTreeTablePanel_CORE_TREE_TABLE" value="29" type="GuiHandlerData"/>
+<property name="CreateSrcFileDialog_FILE_NAME" value="9" type="GuiHandlerData"/>
 <property name="ExpRunTreePanel_EXP_RUN_TREE_TABLE" value="1" type="GuiHandlerData"/>
-<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="185" type="GuiHandlerData"/>
+<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="223" type="GuiHandlerData"/>
 <property name="FindAndReplaceAllDialog_CLOSE" value="1" type="GuiHandlerData"/>
-<property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="45" type="GuiHandlerData"/>
+<property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="86" type="GuiHandlerData"/>
 <property name="GettingStartedView_CREATE_NEW_PROJECT" value="1" type="GuiHandlerData"/>
-<property name="GettingStartedView_OPEN_PROJECT" value="2" type="GuiHandlerData"/>
-<property name="HACGCCoeFileDialog_CLOSE" value="1" type="GuiHandlerData"/>
-<property name="HACGCCoeFileDialog_SAVE" value="2" type="GuiHandlerData"/>
-<property name="HACGCCoeFileDialog_VALIDATE" value="1" type="GuiHandlerData"/>
-<property name="HACGCCoeFileWidget_BROWSE" value="3" type="GuiHandlerData"/>
-<property name="HACGCCoeFileWidget_EDIT" value="1" type="GuiHandlerData"/>
-<property name="HCodeEditor_SEARCH_TEXT_COMBO_BOX" value="17" type="GuiHandlerData"/>
+<property name="GettingStartedView_OPEN_PROJECT" value="3" type="GuiHandlerData"/>
+<property name="HACGCCoeFileDialog_CLOSE" value="7" type="GuiHandlerData"/>
+<property name="HACGCCoeFileDialog_SAVE" value="10" type="GuiHandlerData"/>
+<property name="HACGCCoeFileDialog_VALIDATE" value="9" type="GuiHandlerData"/>
+<property name="HACGCCoeFileWidget_BROWSE" value="10" type="GuiHandlerData"/>
+<property name="HACGCCoeFileWidget_EDIT" value="9" type="GuiHandlerData"/>
+<property name="HCodeEditor_SEARCH_TEXT_COMBO_BOX" value="21" type="GuiHandlerData"/>
 <property name="HPopupTitle_CLOSE" value="2" type="GuiHandlerData"/>
 <property name="MainMenuMgr_FILE" value="2" type="GuiHandlerData"/>
 <property name="MainMenuMgr_OPEN_RECENT_PROJECT" value="1" type="GuiHandlerData"/>
 <property name="MainToolbarMgr_RUN" value="31" type="GuiHandlerData"/>
-<property name="MsgTreePanel_MESSAGE_VIEW_TREE" value="11" type="GuiHandlerData"/>
-<property name="MsgView_WARNING_MESSAGES" value="2" type="GuiHandlerData"/>
+<property name="MsgTreePanel_MESSAGE_VIEW_TREE" value="12" type="GuiHandlerData"/>
+<property name="MsgView_WARNING_MESSAGES" value="3" type="GuiHandlerData"/>
 <property name="PACodeEditor_REPLACE_IN_FILES" value="1" type="GuiHandlerData"/>
-<property name="PACommandNames_ADD_SOURCES" value="11" type="GuiHandlerData"/>
-<property name="PACommandNames_AUTO_CONNECT_TARGET" value="12" type="GuiHandlerData"/>
-<property name="PACommandNames_AUTO_UPDATE_HIER" value="11" type="GuiHandlerData"/>
+<property name="PACommandNames_ADD_SOURCES" value="12" type="GuiHandlerData"/>
+<property name="PACommandNames_AUTO_CONNECT_TARGET" value="16" type="GuiHandlerData"/>
+<property name="PACommandNames_AUTO_UPDATE_HIER" value="12" type="GuiHandlerData"/>
 <property name="PACommandNames_GOTO_IMPLEMENTED_DESIGN" value="1" type="GuiHandlerData"/>
-<property name="PACommandNames_OPEN_HARDWARE_MANAGER" value="11" type="GuiHandlerData"/>
+<property name="PACommandNames_MESSAGE_WINDOW" value="1" type="GuiHandlerData"/>
+<property name="PACommandNames_OPEN_HARDWARE_MANAGER" value="17" type="GuiHandlerData"/>
 <property name="PACommandNames_RUN_BITGEN" value="16" type="GuiHandlerData"/>
 <property name="PACommandNames_RUN_IMPLEMENTATION" value="9" type="GuiHandlerData"/>
 <property name="PACommandNames_RUN_SYNTHESIS" value="15" type="GuiHandlerData"/>
 <property name="PACommandNames_SET_AS_TOP" value="1" type="GuiHandlerData"/>
-<property name="PAViews_CODE" value="16" type="GuiHandlerData"/>
-<property name="PAViews_IP_CATALOG" value="1" type="GuiHandlerData"/>
-<property name="PAViews_PROJECT_SUMMARY" value="2" type="GuiHandlerData"/>
+<property name="PAViews_CODE" value="17" type="GuiHandlerData"/>
+<property name="PAViews_IP_CATALOG" value="3" type="GuiHandlerData"/>
+<property name="PAViews_PROJECT_SUMMARY" value="3" type="GuiHandlerData"/>
 <property name="PartChooser_FAMILY_CHOOSER" value="1" type="GuiHandlerData"/>
 <property name="PartChooser_PARTS" value="1" type="GuiHandlerData"/>
 <property name="PartChooser_PART_PACKAGE_CHOOSER" value="1" type="GuiHandlerData"/>
 <property name="PartChooser_PART_SPEED_CHOOSER" value="1" type="GuiHandlerData"/>
 <property name="PartChooser_PRODUCT_CHOOSER" value="1" type="GuiHandlerData"/>
-<property name="ProgramDebugTab_OPEN_TARGET" value="15" type="GuiHandlerData"/>
-<property name="ProgramDebugTab_PROGRAM_DEVICE" value="38" type="GuiHandlerData"/>
-<property name="ProgramFpgaDialog_PROGRAM" value="32" type="GuiHandlerData"/>
+<property name="ProgramDebugTab_OPEN_TARGET" value="19" type="GuiHandlerData"/>
+<property name="ProgramDebugTab_PROGRAM_DEVICE" value="52" type="GuiHandlerData"/>
+<property name="ProgramFpgaDialog_PROGRAM" value="45" type="GuiHandlerData"/>
 <property name="ProgramFpgaDialog_SPECIFY_BITSTREAM_FILE" value="1" type="GuiHandlerData"/>
+<property name="ProgressDialog_BACKGROUND" value="1" type="GuiHandlerData"/>
 <property name="ProgressDialog_CANCEL" value="2" type="GuiHandlerData"/>
 <property name="ProjectNameChooser_CHOOSE_PROJECT_LOCATION" value="1" type="GuiHandlerData"/>
 <property name="ProjectNameChooser_PROJECT_NAME" value="1" type="GuiHandlerData"/>
 <property name="RDICommands_LINE_COMMENT" value="1" type="GuiHandlerData"/>
 <property name="RDICommands_PROPERTIES" value="2" type="GuiHandlerData"/>
 <property name="RDICommands_UNDO" value="1" type="GuiHandlerData"/>
-<property name="SaveProjectUtils_SAVE" value="14" type="GuiHandlerData"/>
-<property name="SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY" value="2" type="GuiHandlerData"/>
+<property name="SaveProjectUtils_SAVE" value="18" type="GuiHandlerData"/>
+<property name="SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY" value="4" type="GuiHandlerData"/>
 <property name="SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT" value="2" type="GuiHandlerData"/>
-<property name="SrcChooserPanel_CREATE_FILE" value="10" type="GuiHandlerData"/>
-<property name="SrcMenu_IP_HIERARCHY" value="12" type="GuiHandlerData"/>
-<property name="SyntheticaGettingStartedView_RECENT_PROJECTS" value="9" type="GuiHandlerData"/>
-<property name="SyntheticaStateMonitor_CANCEL" value="2" type="GuiHandlerData"/>
-<property name="TaskBanner_CLOSE" value="8" type="GuiHandlerData"/>
+<property name="SrcChooserPanel_CREATE_FILE" value="11" type="GuiHandlerData"/>
+<property name="SrcMenu_IP_HIERARCHY" value="14" type="GuiHandlerData"/>
+<property name="SyntheticaGettingStartedView_RECENT_PROJECTS" value="12" type="GuiHandlerData"/>
+<property name="SyntheticaStateMonitor_CANCEL" value="4" type="GuiHandlerData"/>
+<property name="TaskBanner_CLOSE" value="12" type="GuiHandlerData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="28" type="GuiMode"/>
+<property name="GuiMode" value="34" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="27" type="TclMode"/>
+<property name="TclMode" value="32" type="TclMode"/>
 </item>
 </section>
 </application>

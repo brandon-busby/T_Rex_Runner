@@ -20,67 +20,60 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Pixel_Generation(input [9:0] pixel_x, pixel_y, player_y, input sysClk, videoOn, refTick, InFall, output reg [11:0] RGB);
+module Pixel_Generation(input [9:0] pixel_x, pixel_y, player_y, input sysClk, videoOn, refTick, Gnd, GameOver, Duck, Collision, output reg [11:0] RGB);
 
 // Need to make system clk input to module
 // Want to show '0'
 
-localparam digitSizeX = 16;
-localparam digitLeft = 200;
-localparam digitRight = digitLeft + digitSizeX - 1;
-localparam digitSizeY = 16;
-localparam digitRGB = 12'h000;
-
-
-wire [9:0] digitBottom;
-wire digitROMOn;
-wire digitOn;
-wire digitBit;
-reg [7:0] digitAddr;
-wire [3:0] digitCol;
-wire [15:0] digitRowData;
-//wire [9:0] digitLeftAdj;
-
-
-reg [3:0] digitMSB, letterMSB;
-reg [5:0] count;
-
-dROM digitROM(sysClk, digitROMOn, digitAddr, digitRowData);
+//dROM digitROM(sysClk, digitROMOn, digitAddr, digitRowData);
 //letterROM lROM(sysClk, letterROMOn, letterAddr, letterRowData);
+//obstacleRom obstacleROMa();
 
-//assign digitLeftAdj = pixel_x - digitLeft;
-assign digitBottom = player_y + digitSizeY - 1;
-assign digitROMOn = ((pixel_x >= digitLeft) && (pixel_x <= digitRight)) && ((pixel_y >= player_y) && (pixel_y <= digitBottom));
-assign digitCol = pixel_x[3:0] - digitLeft[3:0]; 
-assign digitBit = digitRowData[~digitCol];
-assign digitOn = digitROMOn & digitBit;
+/******************************* Dino display logic ***************************************/
+localparam dinoStretch = 2;
+localparam dinoSizeX = 16 * (2**dinoStretch);
+localparam dinoLeft = 200;
+localparam dinoRight = dinoLeft + dinoSizeX - 1;
+localparam dinoSizeY = 16 * (2**dinoStretch);
 
+wire [9:0] dinoBottom, dinoLeftAdj, dinoTopAdj, dinoStepCount;
+wire [3:0] dinoCol, dinoMSB;
+wire [15:0] dinoRowData;
+wire dinoROMOn, dinoOn, dinoBit;
 
-always @ (posedge sysClk)
-begin
-    digitAddr[3:0] = pixel_y[3:0] - player_y[3:0];
-    digitAddr[7:4] <= 0;
-end
+reg [7:0] dinoAddr;
+
+dinoROM dinoROMa(sysClk, dinoROMOn, dinoAddr, dinoRowData);
+
+assign dinoLeftAdj = pixel_x - dinoLeft;
+assign dinoTopAdj = pixel_y - player_y;
+assign dinoBottom = player_y + dinoSizeY - 1;
+assign dinoROMOn = ((pixel_x >= dinoLeft) && (pixel_x <= dinoRight) && ((pixel_y >= player_y)) && (pixel_y <= dinoBottom));
+assign dinoCol = dinoLeftAdj[dinoStretch + 3 : dinoStretch];
+assign dinoBit = dinoRowData[~dinoCol];
+assign dinoOn = dinoROMOn & dinoBit;
+
+// module Counter #(parameter MAX_VAL = 1) (output reg [$clog2(MAX_VAL+1)-1:0] Val, input Clk, En, Rst);
+Counter #(30) Step_Counter(dinoStepCount, refTick, 1, 0);
+
+// module Dino_Display_Controller(output reg [3:0] Dino_ROM, input Ref_Tick, Gnd, GameOver, Duck);
+Dino_Display_Controller DDC(dinoMSB, refTick, Gnd, GameOver, Duck);
 
 always @ (*)
 begin
-    if (~videoOn)
-    begin
-        RGB <= 12'h000;
-    end
-    
-    else
-    begin
-        if (digitOn || pixel_y == 180 || pixel_y == 380)
-        begin
-            RGB <= digitRGB;
-        end
-        
-        else
-        begin
-            RGB <= InFall ? 12'hF00 : ~digitRGB;
-        end
-    end
+    dinoAddr[7:4] <= dinoMSB;
+    dinoAddr[3:0] <= dinoTopAdj[dinoStretch+3:dinoStretch];
 end
+
+/*************************** End dino display logic ***************************************/
+
+// Obstacle display logic
+wire [9:0] obstacleBottom, obstacleLeftAdj, obstacleTopAdj;
+wire obstacleROMOn, obstacleOn, obstacleBit;
+wire [3:0] obstacleCol, obstacleMSB;
+wire [15:0] obstacleRowData;
+wire [7:0] obstacleAddr;
+
+always @ (*) RGB <= {12{videoOn&~dinoOn}};
 
 endmodule
